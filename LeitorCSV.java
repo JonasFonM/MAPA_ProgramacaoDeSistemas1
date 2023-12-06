@@ -78,7 +78,7 @@ public class LeitorCSV {
 
         System.out.println("Informe os detalhes da nova doação:");
         System.out.print("Código: ");
-        int codigo = scanner.nextInt();
+        String codigo = scanner.nextLine();
         scanner.nextLine();
 
         System.out.print("Nome: ");
@@ -94,7 +94,7 @@ public class LeitorCSV {
         String tipoSanguineo = scanner.nextLine();
 
         System.out.print("MLS Doados: ");
-        int mlsDoados = scanner.nextInt();
+        String mlsDoados = scanner.nextLine();
         scanner.nextLine(); 
 
         String novaDoacao = String.format("%d,%s,%s,%s,%s,%d", codigo, nome, cpf, dataNascimento, tipoSanguineo, mlsDoados);
@@ -116,7 +116,7 @@ public class LeitorCSV {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Informe o código da doação a ser removida:");
-        int codigoRemover = scanner.nextInt();
+        String codigoRemover = scanner.nextLine();
         scanner.nextLine();
 
         Path arquivoOriginal = Paths.get(caminhoArquivo);
@@ -128,7 +128,7 @@ public class LeitorCSV {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] campos = linha.split(",");
-                int codigo = Integer.parseInt(campos[0].trim());
+                String codigo = campos[0].trim();
 
                 if (codigo != codigoRemover) {
                     writer.write(linha);
