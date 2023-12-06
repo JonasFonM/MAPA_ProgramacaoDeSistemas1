@@ -105,7 +105,7 @@ public class LeitorCSV {
         }
     }
 
-      /**
+    /**
      * Deleta uma doação com base no código especificado.
      *
      * @param caminhoArquivo O caminho do arquivo CSV.
@@ -116,7 +116,7 @@ public class LeitorCSV {
 
         System.out.println("Informe o código da doação a ser removida:");
         int codigoRemover = scanner.nextInt();
-        scanner.nextLine(); // Consumir a quebra de linha após a leitura do número
+        scanner.nextLine();
 
         Path arquivoOriginal = Paths.get(caminhoArquivo);
         Path arquivoTemp = Paths.get(caminhoArquivo + ".tmp");
@@ -136,7 +136,6 @@ public class LeitorCSV {
             }
         }
 
-        // Mover (renomear) o arquivo temporário para substituir o original
         try {
             Files.move(arquivoTemp, arquivoOriginal, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Doação removida com sucesso!");
@@ -144,6 +143,7 @@ public class LeitorCSV {
             System.err.println("Erro ao mover o arquivo temporário: " + e.getMessage());
         }
     }
+
     /**
      * Exibe o menu de opções.
      */
