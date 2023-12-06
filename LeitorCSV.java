@@ -60,6 +60,7 @@ public class LeitorCSV {
     private static void exibirConteudoArquivo(String caminhoArquivo) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
+            System.out.println("\n");
             while ((linha = reader.readLine()) != null) {
                 System.out.println(linha);
             }
