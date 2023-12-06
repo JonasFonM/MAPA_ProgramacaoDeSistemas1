@@ -97,7 +97,7 @@ public class LeitorCSV {
         String mlsDoados = scanner.nextLine();
         scanner.nextLine(); 
 
-        String novaDoacao = String.format("%d,%s,%s,%s,%s,%d", codigo, nome, cpf, dataNascimento, tipoSanguineo, mlsDoados);
+        String novaDoacao = String.format("%s,%s,%s,%s,%s,%s", codigo, nome, cpf, dataNascimento, tipoSanguineo, mlsDoados);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminhoArquivo, true))) {
             writer.newLine();
